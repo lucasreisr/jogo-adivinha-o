@@ -1,30 +1,36 @@
-print('***********************************')
-print('*Bem vindo, ao JOGO DE ADIVINHAÇÃO*')
-print('***********************************')
+import random;
 
-#definindo número secreto
-numeroSecreto = 38
+print('*********************************')
+print('Bem vindo, ao JOGO DE ADIVINHAÇÃO')
+print('*********************************')
 
-#definindo o número de tentativas e rodada
-numeroTentativas = 3
+#Definindo o número secreto
+numeroSecreto = round(random.random()*100)
+#print(numeroSecreto)
+#Definindo o número de tentativas e rodada
+numeroTentativas = 10
 rodada = 1
 
 while(rodada <= numeroTentativas):
-    print('Tentativa' , rodada, 'de', numeroTentativas)
-    #numeroTentativas = numeroTentativas -1
-    rodada = rodada +1
+    print('Tentativa',rodada, 'de' , numeroTentativas)
 
-#recebendo o chute
-    chuteString = input('Digite um número: ')
-    
+#Recebendo o chute do jogador
+    chuteString = input('Digite um número entre 1 e 100: ')
     chute = int(chuteString)
 
-#declarando as condições
+#Declarando as condições
     if (numeroSecreto == chute):
         print('Você acertou!')
         break
     elif(chute>numeroSecreto):
-        print("Você errou! o número é menor")
+        print('Você errou!! O número secreto é um número menor')
     else:
-        print('Você errou! O número secreto é maior')
-     
+        print('Você errou!! O número secreto é um número maior')
+
+    #numeroTentativas = numeroTentativas - 1
+    rodada = rodada + 1
+
+
+
+#Aula Elif 26.02.24
+
